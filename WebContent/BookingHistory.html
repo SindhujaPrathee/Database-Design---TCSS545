@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bus Booking Retrieval</title>
+</head>
+<body bgcolor="#FEBAAD">
+
+<body>
+	<h2>RBS Bus Booking System</h2><br>
+	<h4><b>Enter Booking ID to retrieve specific booking or Enter Mobile
+		Number to retrieve all the bookings</b></h4>
+	
+	<form name="form1" action="BookingHistory1.jsp" method="post"> 
+
+		<label>
+		<span>Mobile Number:</span> 
+		&nbsp; <input type="text" name="phone_number" value="mobile number" 
+		onblur="checkMobileNumberField(this);" maxlength="10"
+			style="width: 160; height: 24; background-color: #97cfc3"> <br>
+		</label>
+		<p id="mobileNumberError"></p>
+
+		<label>
+		<span>Booking ID:</span> 
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="booking_id" 
+			value="booking id" onblur="checkBookingIdField(this);"
+			style="width: 160; height: 24; background-color: #97cfc3"> <br>
+		</label>
+		<p id="bookingIdError"></p>
+
+		<input type="Submit" value="Retrive History" name="Submit"
+			onclick="checkform();"
+			style="width: 160; height: 24; background-color: #97cfc3">
+
+		&nbsp; &nbsp; <input type="Reset" value="Reset"
+			style="width: 160; height: 24; background-color: #97cfc3">
+
+	</form>
+
+	<script type="text/javascript">
+		function checkMobileNumberField(field) 
+		{
+			  if (field.value.length != 10) 
+			  {
+				  alert("Mobile number must be exactly 10 digits.")
+			  }
+			document.getElementById("mobileNumberError").innerText = (field.value == "") ? "Input value should not be empty. Please Enter Your Mobile Number"
+					: "";
+		}
+	</script>
+	
+
+	<script type="text/javascript">
+		function checkBookingIdField(field) {
+			document.getElementById("bookingIdError").innerText = (field.value == "") ? "Input value should be not empty. Please Enter Your Booking Id"
+					: "";
+		}
+		
+
+</script>
+</body>
+</html>
